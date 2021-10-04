@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@700&display=swap');
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+body{
+    background: #1B1B2F;
+}
+
+.navbar{
+    background: #17223E;
+}
+
+.navbar-brand .navbar-toggler, .navbar-toggler-icon, .nav-link{
+    color: white;
+}
+
+.registration-login-form{
+    color: #FFF8D2;
+    background: #17223E;
+    border-radius: 8px;
+    margin-top: 40px;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+p{
+    color: #A0E4F1;
+}
+.card{
+    min-width: 200px;
+    max-width: 400px;
+    background: #17223E;
+    border-radius: 10px;
+}
+
+.banner-title{
+    font-size: 3em;
+}

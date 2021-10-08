@@ -25,9 +25,7 @@ body{
     max-width: 500px;
 }
 
-p{
-    color: #A0E4F1;
-}
+
 .card{
     min-width: 200px;
     max-width: 400px;
@@ -37,4 +35,33 @@ p{
 
 .banner-title{
     font-size: 3em;
+}
+
+.section-title{
+    font-size: 3em;
+    font-weight:900;
+    text-transform: uppercase;
+}
+p{
+    color: #A0E4F1;
+}
+
+.banner{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #28395a;
+    border-radius: 0px 0px 100px 100px;
+}
+
+.banner .welcome{
+    font-size: 3em;
+    color:#A0E4F1;
+    font-weight: 1100;
+    opacity: 1;
+}
+
+.banner p{
+    font-size: 1.5em;
+    color: #FFF8D2;
+    opacity: 0.8;
 }

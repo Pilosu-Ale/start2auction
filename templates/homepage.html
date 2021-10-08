@@ -7,7 +7,13 @@
 {% block content %}
 <div class="container-fluid">
     
+    
     {% if request.user.is_authenticated %}
+    <div class="container-fluid banner text-center">
+        <p class="welcome">Welcome to the Auction Platform</p>
+        <p>Create your auction or make a bid</p>
+        <p>The page will refresh every 20 seconds to see the updates</p>
+    </div>
     <div class="d-flex justify-content-center">
             <div class="p-3 registration-login-form d-inline-block">
                 <form class="crispy" action="{% url 'homepage' %}" method="post">
@@ -19,7 +25,7 @@
     </div>
 
     <div class="row d-flex justify-content-center">
-        <p class="m-3 text-center">Open Auctions</p>
+        <p class="m-3 text-center section-title">Open Auctions</p>
         {% for auction in auction_list_open %}
         <div class="card m-3">
             <div class="card-body">
@@ -42,14 +48,16 @@
                     <p>Current Winner:</p>
                     <p>{{ auction.winner }}</p>
                 </div>
-                <a href="{% url 'auction_bid' auction.id %}" class="btn btn-primary">Make your offer</a>
+                <div class="d-flex justify-content-center mt-3">
+                    <a href="{% url 'auction_bid' auction.id %}" class="btn btn-primary">Make your offer</a>
+                </div>
             </div>
         </div>
         {% endfor %}
     </div>
 
     <div class="row d-flex justify-content-center">
-        <p class="m-3 text-center">Closed Auctions</p>
+        <p class="m-3 text-center section-title">Closed Auctions</p>
         {% for auction in auction_list_closed %}
         <div class="card m-3">
             <div class="card-body">
@@ -114,9 +122,9 @@
     
 </div>
 <script type="text/javascript">
-    window.setInterval('refresh()', 10000); 	
-    // Call a function every 10000 milliseconds 
-    // (OR 10 seconds).
+    window.setInterval('refresh()', 20000); 	
+    // Call a function every 20000 milliseconds 
+    // (OR 20 seconds).
 
     // Refresh or reload page.
     function refresh() {

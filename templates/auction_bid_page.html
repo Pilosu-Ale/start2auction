@@ -6,21 +6,32 @@
 
 {% block content %}
 
+
 <div class="row justify-content-center">
-    <div class="banner container-fluid text-center">
+    <div class="container text-center">
         <p class="banner-title">Make your bid</p>
-        <p id="auction-date">{{ auction.end_date }}</p>
-        <p id="demo"></p>
+        
     </div>
     
     <div class="col-sm-auto">
         <div class="p-3 registration-login-form">
-            <p>Winner: {{ winner_temp }}</p>
-            <p>Bid: {{ bid_temp }}$</p>
+            <p class="text-danger text-center" id="demo"></p>
+            <div class="d-flex justify-content-between">
+                <p>Winner: </p>
+                <p>{{ winner_temp }}</p>
+            </div>
+            <div class="d-flex justify-content-between">
+                <p>Bid: </p>
+                <p>{{ bid_temp }}$</p>
+            </div>
+            
+            
             <form class="crispy" method="post">
                 {% csrf_token %}
                 {{ form|crispy }}
-                <input type="submit" class="btn btn-primary" value="Place Bid">
+                <div class="d-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary" value="Place Bid">
+                </div>
             </form>
         </div>
     </div>
@@ -52,7 +63,7 @@
     if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
-    history.back();
+    window.location.href = "{% url 'homepage' %}";
     }
     }, 0);
 </script>

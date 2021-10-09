@@ -38,6 +38,7 @@
 </div>
 
 <script type="text/javascript">
+    //Utilizzo un countdown preso da W3School per fornire il tempo rimanente per fare un offerta
     // Set the date we're counting down to
     var timeoutAuction = new Date("{{ end_date }}").getTime();
     // Update the count down every 1 second
@@ -59,7 +60,7 @@
     document.getElementById("demo").innerHTML = days + "d " + hours + "h "
     + minutes + "m " + seconds + "s ";
 
-    // If the count down is finished, write some text
+    // Quando finisce il countdown l'utente è riportato alla homepage
     if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";

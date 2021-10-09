@@ -19,6 +19,7 @@ class Auction(models.Model):
     txId = models.CharField(max_length=66, default=None, null=True)
 
     def writeOnChain(self, jsonAuction):
+        #Uso il json con tutti i dati dell'asta per la generazione dello hash 
         self.hash = hashlib.sha256(jsonAuction.encode('utf-8')).hexdigest()
         self.txId = sendTransaction(self.hash)
         
